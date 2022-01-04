@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+body {
+  background: #fec107;
+  padding: 0 10px;
+}
+//------- main container / wrapper -----------
+.wrapper {
+  width: 100%;
+  max-width: 500px;
+  margin: 20px auto;
+  background: #fff;
+  padding: 30px;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.125);
+  //---------- form title -----------
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #fec107;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  //-------------- form elements styles ------------
+  .form {
+    width: 100%;
+    //---------- input_field general styles -----------
+    .input_field {
+      margin-bottom: 15px;
+      display: flex;
+      align-items: center;
+      //----------- input_field label -----------
+      label {
+        width: 200px;
+        color: #757575;
+        margin-right: 10px;
+        font-size: 14px;
+      }
+      //----------- input_field inputs & textarea styles -----------
+      .input,
+      .textarea,
+      .custom_select select {
+        &:focus {
+          border: 1px solid #fec107;
+        }
+      }
+      .input,
+      .textarea {
+        width: 100%;
+        outline: none;
+        border: 1px solid #d5dbd9;
+        font-size: 15px;
+        padding: 8px 10px;
+        border-radius: 3px;
+      }
+      .textarea {
+        resize: none;
+        height: 125px;
+      }
+      //----------- input_field custom select -----------
+      .custom_select {
+        position: relative;
+        width: 100%;
+        height: 37px;
+        &:before {
+          position: absolute;
+          top: 12px;
+          right: 12px;
+          content: "";
+          border: 8px solid;
+          border-color: #d5dbd9 transparent transparent transparent;
+          pointer-events: none;
+        }
+        select {
+          border: 1px solid #d5dbd9;
+          // appearance: none;
+          width: 100%;
+          height: 100%;
+          padding: 8px 10px;
+          outline: none;
+        }
+      }
+      //-------- input_field terms checkbox ----------
+      .check {
+        width: 15px;
+        height: 15px;
+        position: relative;
+        display: block;
+        cursor: pointer;
+        input {
+          position: absolute;
+          top: 0;
+          left: 0;
+          opacity: 0;
+          &:checked {
+            & ~ .checkmark {
+              background: #fec107;
+            }
+          }
+        }
+        .checkmark {
+          width: 15px;
+          height: 15px;
+          position: relative;
+          display: block;
+          border: 1px solid #fec107;
+          &:before {
+            position: absolute;
+            top: 1px;
+            left: 2px;
+            content: "";
+            width: 5px;
+            height: 2px;
+            border: 2px solid;
+            border-color: transparent transparent white white;
+            transform: rotate(-45deg);
+          }
+        }
+      }
+      p {
+        font-size: 14px;
+        color: #757575;
+      }
+    }
+    //-------- input_field submit form ----------
+    .btn {
+      width: 100%;
+      padding: 8px 10px;
+      font-size: 15px;
+      border: 0;
+      cursor: pointer;
+      border-radius: 3px;
+      background-color: #fec107;
+      color: white;
+      &:hover {
+        background-color: #ffd65f;
+      }
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+@media (max-width: 700px) {
+  .input_field {
+    flex-wrap: wrap;
+    input {
+        margin-top: 5px;
+    }
+    .terms {
+        display:flex;
+    }
+  }
+}
+
+// .aslan-form {
+//     width: 40px;
+//     height: 40px;
+//     margin: 50px auto;
+//     position: relative;
+//     .aslan-check {
+//         width: 40px;
+//         height: 40px;
+//         z-index: 1;
+//         position: absolute;
+//         opacity: 0;
+//         cursor: pointer;
+//         &:checked {
+//             &~.mark {
+//                 background-color: #fec107;
+//             }
+//         }
+//     }
+//     .mark {
+//         width: 40px;
+//         height: 40px;
+//         background-color: white;
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         &::after {
+//             position: absolute;
+//             top: 0;
+//             left: 5px;
+//             content: "";
+//             width: 15px;
+//             height: 7px;
+//             border: 8px solid;
+//             border-color: transparent transparent white white;
+//             transform: rotate(-45deg)
+//         }
+//     }
+// }
